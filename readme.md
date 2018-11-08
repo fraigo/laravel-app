@@ -17,7 +17,19 @@ After downloading this project you need to run some commands to ensure your Lara
 composer install
 ```
 
-To check your application running, run the following command:
+To create your application .env (environment) file, run the following command:
+
+```
+cp .env.example .env
+```
+
+Then, you need to generate the application key
+
+```
+php artisan key:generate
+```
+
+To start your application server, run the following command:
 
 ```
 php artisan serve
