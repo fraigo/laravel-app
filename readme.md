@@ -19,19 +19,19 @@ composer install
 
 To create your application .env (environment) file, run the following command:
 
-```
+```bash
 cp .env.example .env
 ```
 
 Then, you need to generate the application key
 
-```
+```bash
 php artisan key:generate
 ```
 
 To start your application server, run the following command:
 
-```
+```bash
 php artisan serve
 ```
 
@@ -56,7 +56,7 @@ This is a list of common tasks you need to follow, optionally, to change some de
 
 Modify the file `.env` in the root directory to change the `APP_` variables:
 
-```
+```ini
 APP_NAME=Laravel
 APP_ENV=local
 APP_KEY=base64:3laRWY+EYvd0TqWskcTY5KeQs5jboLf5SCqG5XFfBQw=
@@ -69,18 +69,20 @@ APP_URL=http://localhost
 
 Modify the file `.env` in the root directory to change the `DB_` variables:
 
+```ini
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=homestead
 DB_USERNAME=homestead
 DB_PASSWORD=secret
+```
 
 ### Email delivery
 
 Modify the file `.env` in the root directory to change the `MAIL_` variables. Actually, is configured to use a MailTrap account (visit https://mailtrap.io/ and signup for an username and password). However, you can use a standard SMTP server configuration.
 
-```
+```ini
 MAIL_DRIVER=smtp
 MAIL_HOST=smtp.mailtrap.io
 MAIL_PORT=2525
@@ -98,13 +100,13 @@ Edit the `config/app.php` file to change this parameters:
 
 **Timezone**, using a timezone name as specified in the PHP manual (http://php.net/manual/en/timezones.php). For example, `America/Los_Angeles`. 
 
-```
+```php
 'timezone' => 'UTC',
 ```
 
 **Language** default and fallback. The first one is for default application translation. The second one is used when there is some attempt to change to an unavailable language for translation.
 
-```
+```php
 'locale' => 'en',
 'fallback_locale' => 'en',
 ```
@@ -117,13 +119,13 @@ Under `'providers'` key in `config/app.php`, you can add extra service providers
 
 Useful when you need to use some custom Class Name as an alias, pointing to a real class name, allowing to swap and change between different implementation classes. Also, to avoid using a full namespace class name for some commonly used classes:
 
-```
+```php
 'Log' => Illuminate\Support\Facades\Log::class,
 ```
 
 In this case, you can provide your own `Log` class (implementing all the original Log interface) to override the default behavior:
 
-```
+```php
 'Log' => App\Helpers\MyLogger::class,
 ```
 
