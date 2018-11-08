@@ -57,6 +57,9 @@ $response = $kernel->handle(
 
 $response->send();
 
-file_put_contents("index.html",$response->content());
+if ($request->path()=="/"){
+    file_put_contents("index.html",$response->content());
+}
+
 
 $kernel->terminate($request, $response);

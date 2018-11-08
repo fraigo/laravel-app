@@ -12,9 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.index',["title"=>"Welcome", "content"=> "welcome"]);
 });
 
 Route::get('/login', function () {
-    return view('layouts.index');
+    return view('layouts.index',["title"=>"Login", "content"=> "login"]);
 });
